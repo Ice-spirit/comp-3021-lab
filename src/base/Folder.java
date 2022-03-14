@@ -1,11 +1,12 @@
 package base;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Enumeration;
 import java.util.Collections;
 import java.util.regex.Pattern;
 
-public class Folder implements Comparable<Folder>{
+public class Folder implements Comparable<Folder>, Serializable{
 	
 		private ArrayList<Note> notes = new ArrayList<Note>();
 		private String name;
