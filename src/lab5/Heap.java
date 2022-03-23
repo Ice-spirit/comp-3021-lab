@@ -20,14 +20,11 @@ public class Heap<T extends Comparable<T>> {
     /**
      * @return If size is 0, throw {@link IllegalStateException}.
      * Otherwise, return the first element of {@link this#container}
-     * @throws Exception 
      */
     public T peek(){
         //TODO
     	if (container.size()==0)  throw new IllegalStateException("IllegalStateException!");
     	return container.get(0);
-    	
-    		
     }
 
     /**
@@ -35,7 +32,6 @@ public class Heap<T extends Comparable<T>> {
      * @return If size is 0, throw {@link IllegalStateException}. Otherwise, temporarily save the first element.
      * Afterwards, set the first position to the last element, and remove the last element.
      * Call {@link this#heapifyDown()}, then return the original first element
-     * @throws Exception 
      */
     public T poll(){
         //TODO
