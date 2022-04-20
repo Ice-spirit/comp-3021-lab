@@ -25,6 +25,7 @@ public class testLab4 {
 		}
 		
 		NoteBook nb2 = new NoteBook("test.ser");
+		System.out.println(nb2.getFolders().toString());
 		if(!nb2.getFolders().toString().equals("[Java : 3 : 1, Lab : 1 : 0, Course : 0 : 1, Assignment : 0 : 1, CSE : 0 : 1]")){
 			throw new Exception("Your code has some problems.......");
 		}else{

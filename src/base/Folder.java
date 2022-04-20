@@ -26,7 +26,20 @@ public class Folder implements Comparable<Folder>, Serializable{
 		public ArrayList<Note> getNotes() {
 			return this.notes;
 		}
-
+		
+		public void SaveNote(String note, String content) {
+			for (int i=0; i<notes.size();i++) 
+				if (notes.get(i).getTitle().equals(note))
+					notes.remove(i);
+			notes.add(new TextNote(note,content));
+		}
+		
+		public void DeleteNote(String note) {
+			for (int i=0; i<notes.size();i++) 
+				if (notes.get(i).getTitle().equals(note))
+					notes.remove(i);
+		}
+		
 		public String toString() {
 			int nText = 0;
 			int nImage = 0;
@@ -38,7 +51,7 @@ public class Folder implements Comparable<Folder>, Serializable{
 		}
 
 		public boolean equals(String checkname) {
-			return this.name == checkname;
+			return this.name.equals(checkname);
 		}
 		
 		public void sortNotes(){

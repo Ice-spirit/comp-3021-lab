@@ -38,6 +38,20 @@ public class NoteBook implements Serializable{
 	    }
 	}
 	
+	public void SaveNote(String folder, String note, String content) {
+		for (Folder f: folders) {
+			if (f.equals(folder))
+				f.SaveNote(note, content);
+		}
+	}
+
+	public void DeleteNote(String folder, String note) {
+		for (Folder f: folders) {
+			if (f.equals(folder))
+				f.DeleteNote(note);
+		}
+	}
+	
 	public boolean insertNote(String folderName, Note note) {
 		boolean exist = false;
 		Folder usingFolder = null;
@@ -89,6 +103,18 @@ public class NoteBook implements Serializable{
 	public boolean createImageNote(String folderName, String title) {
 		ImageNote note = new ImageNote(title);
 		return insertNote(folderName, note);
+	}
+	public boolean addFolder(String folderName) {
+		boolean exist = false;
+		for (Folder f1:folders) 	      
+			if (f1.equals(folderName)) 
+				exist = true;
+			
+		if (exist) 
+			return false;
+		
+		folders.add(new Folder(folderName));
+		return true;
 	}
 	
 	public ArrayList<Folder> getFolders(){
